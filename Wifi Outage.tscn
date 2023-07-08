@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl7wwtscc4ryy"]
+
+[ext_resource type="Texture2D" uid="uid://c8ivuw84l6hs4" path="res://Error Avoider Tileset.png" id="1_y13m6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cw2i"]
+size = Vector2(12, 10)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D"]
+position = Vector2(0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(79, 70)
+shape = SubResource("RectangleShape2D_8cw2i")
+
+[node name="Wifi Outage" type="Sprite2D" parent="."]
+position = Vector2(79, 69)
+texture = ExtResource("1_y13m6")
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)

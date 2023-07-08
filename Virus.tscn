@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://buibro5hn8t0b"]
+
+[ext_resource type="Texture2D" uid="uid://c8ivuw84l6hs4" path="res://Error Avoider Tileset.png" id="1_c02a0"]
+[ext_resource type="Script" path="res://Virus.gd" id="1_m43ih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uaebf"]
+size = Vector2(12, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_stibw"]
+radius = 40.0
+
+[node name="Virus" type="StaticBody2D"]
+script = ExtResource("1_m43ih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_uaebf")
+
+[node name="Virus" type="Sprite2D" parent="."]
+texture = ExtResource("1_c02a0")
+region_enabled = true
+region_rect = Rect2(144, 0, 16, 16)
+
+[node name="PlayerSensor" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSensor"]
+shape = SubResource("CircleShape2D_stibw")
+
+[connection signal="body_entered" from="PlayerSensor" to="." method="_on_area_2d_body_entered"]

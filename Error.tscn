@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://caqi6rmbl5sb1"]
+
+[ext_resource type="Texture2D" uid="uid://c8ivuw84l6hs4" path="res://Error Avoider Tileset.png" id="1_ynyru"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nj1l"]
+size = Vector2(16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4nj1l")
+
+[node name="Error" type="Sprite2D" parent="."]
+texture = ExtResource("1_ynyru")
+region_enabled = true
+region_rect = Rect2(160, 0, 16, 16)
